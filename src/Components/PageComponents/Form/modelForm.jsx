@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button1 from "../../ui/button";
+// import Button1 from "../../ui/button";
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import * as yup from "yup";
 export const schema = yup.object().shape({
@@ -24,6 +24,7 @@ const ModelForm = () => {
             flex justify-center items-center"
       >
       <Formik
+      
         initialValues={{
           ueranme: "",
           password: "",
@@ -38,16 +39,16 @@ const ModelForm = () => {
                 type="text"
                 name="username"
               />
-              <div className="fixed z-10 inset-40 bg-green-400" >
+              <div className=" z-10 inset-40 bg-green-400" >
                 <ErrorMessage
                   className="absolute grid place-content-center z-20 inset-36  bg-red-200 "
-                  name="username"
+                  name="username"   onClick={() => setModel(false)}
                   component={"div"}
                 />
                  </div>
-              {/* <label>Password</label>
+              <label>Password</label>
             <Field className="w-40 border mx-auto" type='password' name='password'/>
-            <ErrorMessage name='password' component={'div'}/> */}
+            <ErrorMessage name='password' component={'div'}/>
               <button type="submit" >Submit</button>
             </Form>
           );
